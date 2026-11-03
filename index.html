@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Son de la semaine:in/im</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Gallery grid layout */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Individual card container */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Clickable image styling */
+        .clickable-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .clickable-image:hover {
+            opacity: 0.9;
+        }
+
+        .clickable-image:active {
+            transform: scale(0.98);
+        }
+
+        /* Action button under the image */
+        .text-btn {
+            margin-top: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+            width: 100%;
+        }
+
+        .text-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hidden text description box */
+        .description-box {
+            display: none; /* Hidden by default */
+            margin-top: 12px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
+            border-radius: 4px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Son de la semaine:in/im</h1>
+    <p style="text-align: center; color: #666; margin-top: -20px; margin-bottom: 30px;">
+        Click or double-click an image to play sound. Click the button to read text!
+    </p>
+
+    <div class="gallery">
+        
+        <!-- CARD 1 -->
+        <div class="card">
+            <!-- Image (Single or Double Click plays sound) -->
+            <img 
+                src="photo1.jpg" 
+                alt="Photo 1" 
+                class="clickable-image" 
+                onclick="playSound('sound1.mp3')"
+                ondblclick="toggleText('desc1')"
+            >
+            <!-- Button to show text -->
+            <button class="text-btn" onclick="toggleText('desc1')">Afficher Le Texte</button>
+            
+            <!-- Hidden Text Box -->
+            <div id="desc1" class="description-box">
+                <h1>un pinceau</h1>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img 
+                src="photo2.jpg" 
+                alt="Photo 2" 
+                class="clickable-image" 
+                onclick="playSound('sound2.mp3')"
+                ondblclick="toggleText('desc2')"
+            >
+            <button class="text-btn" onclick="toggleText('desc2')">Afficher Le Texte</button>
+            <div id="desc2" class="description-box">
+                <h1>une chimpanzé</h1>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img 
+                src="photo3.jpg" 
+                alt="Photo 3" 
+                class="clickable-image" 
+                onclick="playSound('sound3.mp3')"
+                ondblclick="toggleText('desc3')"
+            >
+            <button class="text-btn" onclick="toggleText('desc3')">Afficher Le Texte</button>
+            <div id="desc3" class="description-box">
+                <h1>un pingouin<h1>
+            </div>
+        </div>
+		
+		<!-- CARD 4 -->
+        <div class="card">
+            <img 
+                src="photo4.jpg" 
+                alt="Photo 4" 
+                class="clickable-image" 
+                onclick="playSound('sound4.mp3')"
+                ondblclick="toggleText('desc4')"
+            >
+            <button class="text-btn" onclick="toggleText('desc4')">Afficher Le Texte</button>
+            <div id="desc4" class="description-box">
+                <h1>vingt</h1>
+            </div>
+			
+        </div>
+		
+		<!-- CARD 5 -->
+        <div class="card">
+            <img 
+                src="photo5.jpg" 
+                alt="Photo 5" 
+                class="clickable-image" 
+                onclick="playSound('sound5.mp3')"
+                ondblclick="toggleText('desc5')"
+            >
+            <button class="text-btn" onclick="toggleText('desc5')">Afficher Le Texte</button>
+            <div id="desc5" class="description-box">
+                <h1>important</h1>
+            </div>
+		</div>
+
+    
+	
+		<!-- CARD 6 -->
+        <div class="card">
+            <img 
+                src="photo6.jpg" 
+                alt="Photo 6" 
+                class="clickable-image" 
+                onclick="playSound('sound6.mp3')"
+                ondblclick="toggleText('desc6')"
+            >
+            <button class="text-btn" onclick="toggleText('desc6')">Afficher Le Texte</button>
+            <div id="desc6" class="description-box">
+                <h1>elle grimpe</h1>
+            </div>
+
+		</div>
+	
+		<!-- CARD 7 -->
+        <div class="card">
+            <img 
+                src="photo7.jpg" 
+                alt="Photo 7" 
+                class="clickable-image" 
+                onclick="playSound('sound7.mp3')"
+                ondblclick="toggleText('desc7')"
+            >
+            <button class="text-btn" onclick="toggleText('desc7')">Afficher Le Texte</button>
+            <div id="desc7" class="description-box">
+                <h1>c'est impossible</h1>
+            </div>
+
+		</div>
+	
+		<!-- CARD 8 -->
+        <div class="card">
+            <img 
+                src="photo8.jpg" 
+                alt="Photo 8" 
+                class="clickable-image" 
+                onclick="playSound('sound8.mp3')"
+                ondblclick="toggleText('desc8')"
+            >
+            <button class="text-btn" onclick="toggleText('desc8')">Afficher Le Texte</button>
+            <div id="desc8" class="description-box">
+                <h1>c'est impoli</h1>
+            </div>
+
+		</div>
+	
+		<!-- CARD 9 -->
+        <div class="card">
+            <img 
+                src="photo9.jpg" 
+                alt="Photo 9" 
+                class="clickable-image" 
+                onclick="playSound('sound9.mp3')"
+                ondblclick="toggleText('desc9')"
+            >
+            <button class="text-btn" onclick="toggleText('desc9')">Afficher Le Texte</button>
+            <div id="desc9" class="description-box">
+                <h1>Un marin a vu un serin et un lapin sur son chemin.</h1>
+            </div>
+
+		</div>
+	
+		<!-- CARD 10 -->
+        <div class="card">
+            <img 
+                src="photo10.jpg" 
+                alt="Photo 10" 
+                class="clickable-image" 
+                onclick="playSound('sound10.mp3')"
+                ondblclick="toggleText('desc10')"
+            >
+            <button class="text-btn" onclick="toggleText('desc10')">Afficher Le Texte</button>
+            <div id="desc10" class="description-box">
+                <h1>Le lutin a fait un dessin d'un singe ce matin.</h1>
+            </div>
+
+		</div>
+	
+		
+	
+		
+
+    </div>
+
+    <script>
+        // Track current playing audio so they don't overlap awkwardly
+        let currentAudio = null;
+
+        function playSound(audioFile) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            currentAudio = new Audio(audioFile);
+            currentAudio.play().catch(error => {
+                console.log("Audio playback error (make sure sound file exists):", error);
+            });
+        }
+
+        function toggleText(descId) {
+            var box = document.getElementById(descId);
+            // Toggle visibility (if hidden show it, if showing hide it)
+            if (box.style.display === "block") {
+                box.style.display = "none";
+            } else {
+                box.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
